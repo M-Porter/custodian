@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
-        Text("settings view")
+        VStack {
+            Text("settings view")
+                .padding()
+            Spacer()
+            HStack {
+                Button("Cancel", action: { presentationMode.wrappedValue.dismiss() })
+                Spacer()
+                Button("Create", action: { })
+            }
+        }
     }
 }
 
