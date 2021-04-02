@@ -121,11 +121,11 @@
 			children = (
 				2046ADEB2615ACF000923AE3 /* Views */,
 				207EC1E92614589E00EDC063 /* CustodianApp.swift */,
+				203B42712616E2FD006F909D /* Values.swift */,
 				207EC1ED2614589F00EDC063 /* Assets.xcassets */,
 				207EC1F22614589F00EDC063 /* Info.plist */,
 				207EC1F32614589F00EDC063 /* Custodian.entitlements */,
 				207EC1EF2614589F00EDC063 /* Preview Content */,
-				203B42712616E2FD006F909D /* Values.swift */,
 			);
 			path = Custodian;
 			sourceTree = "<group>";
