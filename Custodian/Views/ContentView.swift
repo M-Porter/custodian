@@ -44,7 +44,6 @@ struct ContentView: View {
         activatedView()
             .sheet(isPresented: $showingNewGroupView) {
                 SettingsView()
-                    .padding()
                     .frame(
                         minWidth: WINDOW_MIN_WIDTH-40,
                         maxWidth: WINDOW_MIN_WIDTH-40,

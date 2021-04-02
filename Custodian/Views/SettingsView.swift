@@ -20,6 +20,7 @@ struct SettingsView: View {
                 Spacer()
                 Button("Create", action: { })
             }
+            .padding()
         }
     }
 }
