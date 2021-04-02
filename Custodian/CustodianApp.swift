@@ -7,20 +7,17 @@
 
 import SwiftUI
 
-var idealHeight = CGFloat.init(600)
-var idealWidth = CGFloat.init(368)
-
 @main
 struct CustodianApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .frame(
-                    minWidth: 100,
-                    idealWidth: idealWidth,
+                    minWidth: WINDOW_MIN_WIDTH,
+                    idealWidth: WINDOW_MIN_WIDTH,
                     maxWidth: .infinity,
-                    minHeight: 100,
-                    idealHeight: idealHeight,
+                    minHeight: WINDOW_MIN_HEIGHT,
+                    idealHeight: WINDOW_MIN_HEIGHT,
                     maxHeight: .infinity,
                     alignment: .center
                 )
