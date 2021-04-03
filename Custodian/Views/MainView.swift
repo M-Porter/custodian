@@ -12,23 +12,33 @@ struct MainView: View {
 
     @State var presentingNewGroupView = false
 
+    @ViewBuilder func slideOutView() -> some View {
+        if presentingNewGroupView {
+            HStack {
+                Spacer()
+                NewGroupView(isPresented: $presentingNewGroupView)
+                    .background(Color(.windowBackgroundColor))
+                    .frame(
+                        minWidth: 300,
+                        maxWidth: 300,
+                        alignment: .trailing
+                    )
+            }
+        }
+    }
+
     var body: some View {
         ZStack {
             VStack {
                 Text("main view")
             }
+            slideOutView()
+                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
+                .animation(.default)
         }
         .navigationTitle("Project A")
         .navigationSubtitle("3 repositories")
-        .sheet(isPresented: $presentingNewGroupView) {
-            NewGroupView(isPresented: $presentingNewGroupView)
-                .frame(
-                    minWidth: WINDOW_MIN_WIDTH-40,
-                    maxWidth: WINDOW_MIN_WIDTH-40,
-                    minHeight: WINDOW_MIN_HEIGHT-20,
-                    maxHeight: WINDOW_MIN_HEIGHT-20
-                )
-        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
                 Group {
@@ -42,7 +52,7 @@ struct MainView: View {
                         Image(systemName: "folder")
                     }
 
-                    Button(action: { presentingNewGroupView.toggle() }) {
+                    Button(action: { presentingNewGroupView = true }) {
                         Label("New Group", systemImage: "folder.badge.plus")
                     }
 

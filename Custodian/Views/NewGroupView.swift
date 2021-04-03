@@ -12,7 +12,7 @@ struct NewGroupView: View {
 
     var body: some View {
         VStack {
-            Text("new group view view")
+            Text("new group view")
                 .padding()
             Spacer()
             HStack {
