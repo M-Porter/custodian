@@ -11,7 +11,16 @@ struct SettingsView: View {
     @EnvironmentObject var viewManager: ViewManager
 
     var body: some View {
-        Text("settings view")
+        VStack {
+            Text("settings view")
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .navigation) {
+                Button(action: { viewManager.navigate(to: .mainView) }) {
+                    Label("Back", systemImage: "chevron.left")
+                }
+            }
+        }
     }
 }
 

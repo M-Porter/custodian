@@ -10,9 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var viewManager: ViewManager
 
-    @State var presentingNewGroupView = false
-
-    @ViewBuilder func activatedView() -> some View {
+    var body: some View {
         switch viewManager.activeView {
         case .mainView:
             MainView()
@@ -22,54 +20,6 @@ struct ContentView: View {
             SettingsView()
                 .navigationTitle("Settings")
         }
-    }
-
-    var body: some View {
-        activatedView()
-            .sheet(isPresented: $presentingNewGroupView) {
-                NewGroupView(isPresented: $presentingNewGroupView)
-                    .frame(
-                        minWidth: WINDOW_MIN_WIDTH-40,
-                        maxWidth: WINDOW_MIN_WIDTH-40,
-                        minHeight: WINDOW_MIN_HEIGHT-20,
-                        maxHeight: WINDOW_MIN_HEIGHT-20
-                    )
-            }
-            .toolbar(content: {
-                ToolbarItemGroup(placement: .navigation) {
-                    if viewManager.activeView == AppView.settingsView {
-                        Button(action: { viewManager.navigate(to: .mainView) }) {
-                            Label("Back", systemImage: "chevron.left")
-                        }
-                    }
-                }
-
-                ToolbarItemGroup(placement: .primaryAction) {
-                    if viewManager.activeView != AppView.settingsView {
-                        Group {
-                            Menu {
-                                Button(action: {}) {
-                                    Text("Weebly")
-                                }
-                                Button(action: {}) {
-                                    Text("Square")
-                                }
-                            } label: {
-                                Text("Weebly")
-                                Image(systemName: "folder")
-                            }
-
-                            Button(action: { presentingNewGroupView.toggle() }) {
-                                Label("New Group", systemImage: "folder.badge.plus")
-                            }
-
-                            Button(action: { viewManager.navigate(to: .settingsView) }) {
-                                Label("Settings", systemImage: "gear")
-                            }
-                        }
-                    }
-                }
-            })
     }
 }
 
