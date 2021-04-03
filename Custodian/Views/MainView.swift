@@ -18,6 +18,8 @@ struct MainView: View {
                 Text("main view")
             }
         }
+        .navigationTitle("Project A")
+        .navigationSubtitle("3 repositories")
         .sheet(isPresented: $presentingNewGroupView) {
             NewGroupView(isPresented: $presentingNewGroupView)
                 .frame(
@@ -31,14 +33,12 @@ struct MainView: View {
             ToolbarItemGroup(placement: .primaryAction) {
                 Group {
                     Menu {
-                        Button(action: {}) {
-                            Text("Weebly")
-                        }
-                        Button(action: {}) {
-                            Text("Square")
-                        }
+                        Button("Project A", action: {})
+                        Button("Project B", action: {})
+                        Button("Project C", action: {})
+                        Button("Project D", action: {})
                     } label: {
-                        Text("Weebly")
+                        Text("Project A")
                         Image(systemName: "folder")
                     }
 

@@ -14,6 +14,7 @@ struct SettingsView: View {
         VStack {
             Text("settings view")
         }
+        .navigationTitle("Settings")
         .toolbar {
             ToolbarItemGroup(placement: .navigation) {
                 Button(action: { viewManager.navigate(to: .mainView) }) {

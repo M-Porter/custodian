@@ -14,11 +14,8 @@ struct ContentView: View {
         switch viewManager.activeView {
         case .mainView:
             MainView()
-                .navigationTitle("Weebly")
-                .navigationSubtitle("6 linked repositories")
         case .settingsView:
             SettingsView()
-                .navigationTitle("Settings")
         }
     }
 }
