@@ -18,6 +18,15 @@ struct MainView: View {
                 Text("main view")
             }
         }
+        .sheet(isPresented: $presentingNewGroupView) {
+            NewGroupView(isPresented: $presentingNewGroupView)
+                .frame(
+                    minWidth: WINDOW_MIN_WIDTH-40,
+                    maxWidth: WINDOW_MIN_WIDTH-40,
+                    minHeight: WINDOW_MIN_HEIGHT-20,
+                    maxHeight: WINDOW_MIN_HEIGHT-20
+                )
+        }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
                 Group {
