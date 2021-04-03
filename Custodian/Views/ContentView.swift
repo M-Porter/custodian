@@ -13,10 +13,10 @@ enum AppViews {
 }
 
 struct ContentView: View {
-    @State private var activeView: AppViews = .mainView
-    @State private var showingNewGroupView: Bool = false
+    @State var activeView: AppViews = .mainView
+    @State var presentingNewGroupView: Bool = false
 
-    @ViewBuilder private func activatedView() -> some View {
+    @ViewBuilder func activatedView() -> some View {
         switch activeView {
         case .mainView:
             MainView()
@@ -32,18 +32,10 @@ struct ContentView: View {
         activeView = appView
     }
 
-    private func navigateHome() {
-        activeView = .mainView
-    }
-
-    private func setNewGroupView(showing: Bool) {
-        showingNewGroupView = showing
-    }
-
     var body: some View {
         activatedView()
-            .sheet(isPresented: $showingNewGroupView) {
-                SettingsView()
+            .sheet(isPresented: $presentingNewGroupView) {
+                NewGroupView(isPresented: $presentingNewGroupView)
                     .frame(
                         minWidth: WINDOW_MIN_WIDTH-40,
                         maxWidth: WINDOW_MIN_WIDTH-40,
@@ -54,7 +46,7 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigation) {
                     if activeView == AppViews.settingsView {
-                        Button(action: { navigateHome() }) {
+                        Button(action: { navigateTo(appView: .mainView) }) {
                             Label("Back", systemImage: "chevron.left")
                         }
                     }
@@ -75,7 +67,7 @@ struct ContentView: View {
                                 Image(systemName: "folder")
                             }
 
-                            Button(action: { setNewGroupView(showing: true) }) {
+                            Button(action: { presentingNewGroupView.toggle() }) {
                                 Label("New Group", systemImage: "folder.badge.plus")
                             }
 

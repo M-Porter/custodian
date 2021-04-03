@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct NewGroupView: View {
+    @Binding var isPresented: Bool
+
     var body: some View {
-        Text("new group view")
+        VStack {
+            Text("new group view view")
+                .padding()
+            Spacer()
+            HStack {
+                Button("Cancel", action: { isPresented.toggle() })
+                Spacer()
+                Button("Create", action: { })
+            }
+            .padding()
+        }
     }
 }
 
 struct NewGroupView_Previews: PreviewProvider {
     static var previews: some View {
-        NewGroupView()
+        NewGroupView(isPresented: .constant(true))
     }
 }

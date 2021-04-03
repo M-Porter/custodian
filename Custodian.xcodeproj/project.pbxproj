@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2035E8DB2618249700A9C6A7 /* sort-xcode-project-file.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = "sort-xcode-project-file.pl"; sourceTree = "<group>"; };
 		203B426C2616DA17006F909D /* NewGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupView.swift; sourceTree = "<group>"; };
 		203B42712616E2FD006F909D /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		204A65E42616AAEC0012DD7A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -83,13 +84,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2035E8DA2618245D00A9C6A7 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				2035E8DB2618249700A9C6A7 /* sort-xcode-project-file.pl */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
 		2046ADEB2615ACF000923AE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				207EC1EB2614589E00EDC063 /* ContentView.swift */,
-				205BD7B926169DF800649CF5 /* SettingsView.swift */,
 				205BD7BE2616A30500649CF5 /* MainView.swift */,
 				203B426C2616DA17006F909D /* NewGroupView.swift */,
+				205BD7B926169DF800649CF5 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,6 +112,7 @@
 				207EC1FB2614589F00EDC063 /* CustodianTests */,
 				207EC2062614589F00EDC063 /* CustodianUITests */,
 				207EC1E72614589E00EDC063 /* Products */,
+				2035E8DA2618245D00A9C6A7 /* scripts */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,13 +129,13 @@
 		207EC1E82614589E00EDC063 /* Custodian */ = {
 			isa = PBXGroup;
 			children = (
-				2046ADEB2615ACF000923AE3 /* Views */,
+				207EC1F32614589F00EDC063 /* Custodian.entitlements */,
+				207EC1F22614589F00EDC063 /* Info.plist */,
 				207EC1E92614589E00EDC063 /* CustodianApp.swift */,
 				203B42712616E2FD006F909D /* Values.swift */,
 				207EC1ED2614589F00EDC063 /* Assets.xcassets */,
-				207EC1F22614589F00EDC063 /* Info.plist */,
-				207EC1F32614589F00EDC063 /* Custodian.entitlements */,
 				207EC1EF2614589F00EDC063 /* Preview Content */,
+				2046ADEB2615ACF000923AE3 /* Views */,
 			);
 			path = Custodian;
 			sourceTree = "<group>";
