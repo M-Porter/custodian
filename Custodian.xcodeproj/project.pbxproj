@@ -129,13 +129,13 @@
 		207EC1E82614589E00EDC063 /* Custodian */ = {
 			isa = PBXGroup;
 			children = (
-				207EC1F32614589F00EDC063 /* Custodian.entitlements */,
-				207EC1F22614589F00EDC063 /* Info.plist */,
-				207EC1E92614589E00EDC063 /* CustodianApp.swift */,
-				203B42712616E2FD006F909D /* Values.swift */,
-				207EC1ED2614589F00EDC063 /* Assets.xcassets */,
 				207EC1EF2614589F00EDC063 /* Preview Content */,
 				2046ADEB2615ACF000923AE3 /* Views */,
+				207EC1ED2614589F00EDC063 /* Assets.xcassets */,
+				207EC1F32614589F00EDC063 /* Custodian.entitlements */,
+				207EC1E92614589E00EDC063 /* CustodianApp.swift */,
+				207EC1F22614589F00EDC063 /* Info.plist */,
+				203B42712616E2FD006F909D /* Values.swift */,
 			);
 			path = Custodian;
 			sourceTree = "<group>";
@@ -269,8 +269,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				207EC1F12614589F00EDC063 /* Preview Assets.xcassets in Resources */,
 				207EC1EE2614589F00EDC063 /* Assets.xcassets in Resources */,
+				207EC1F12614589F00EDC063 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,12 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				203B426D2616DA17006F909D /* NewGroupView.swift in Sources */,
-				203B42722616E2FD006F909D /* Values.swift in Sources */,
-				205BD7BA26169DF800649CF5 /* SettingsView.swift in Sources */,
-				205BD7BF2616A30500649CF5 /* MainView.swift in Sources */,
 				207EC1EC2614589E00EDC063 /* ContentView.swift in Sources */,
 				207EC1EA2614589E00EDC063 /* CustodianApp.swift in Sources */,
+				205BD7BF2616A30500649CF5 /* MainView.swift in Sources */,
+				203B426D2616DA17006F909D /* NewGroupView.swift in Sources */,
+				205BD7BA26169DF800649CF5 /* SettingsView.swift in Sources */,
+				203B42722616E2FD006F909D /* Values.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
