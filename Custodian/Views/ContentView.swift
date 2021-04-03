@@ -24,10 +24,6 @@ struct ContentView: View {
         }
     }
 
-    private func navigateTo(appView: AppView) {
-        viewManager.navigate(to: appView)
-    }
-
     var body: some View {
         activatedView()
             .sheet(isPresented: $presentingNewGroupView) {
@@ -42,7 +38,7 @@ struct ContentView: View {
             .toolbar(content: {
                 ToolbarItemGroup(placement: .navigation) {
                     if viewManager.activeView == AppView.settingsView {
-                        Button(action: { navigateTo(appView: .mainView) }) {
+                        Button(action: { viewManager.navigate(to: .mainView) }) {
                             Label("Back", systemImage: "chevron.left")
                         }
                     }
@@ -67,7 +63,7 @@ struct ContentView: View {
                                 Label("New Group", systemImage: "folder.badge.plus")
                             }
 
-                            Button(action: { navigateTo(appView: .settingsView) }) {
+                            Button(action: { viewManager.navigate(to: .settingsView) }) {
                                 Label("Settings", systemImage: "gear")
                             }
                         }
