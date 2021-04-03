@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var viewManager: ViewManager
+
     var body: some View {
         Text("settings view")
     }

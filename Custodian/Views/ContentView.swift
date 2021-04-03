@@ -6,18 +6,15 @@
 //
 
 import SwiftUI
-
-enum AppViews {
-    case mainView
-    case settingsView
-}
+import Combine
 
 struct ContentView: View {
-    @State var activeView: AppViews = .mainView
-    @State var presentingNewGroupView: Bool = false
+    @EnvironmentObject var viewManager: ViewManager
+
+    @State var presentingNewGroupView = false
 
     @ViewBuilder func activatedView() -> some View {
-        switch activeView {
+        switch viewManager.activeView {
         case .mainView:
             MainView()
                 .navigationTitle("Weebly")
@@ -28,8 +25,8 @@ struct ContentView: View {
         }
     }
 
-    private func navigateTo(appView: AppViews) {
-        activeView = appView
+    private func navigateTo(appView: AppView) {
+        viewManager.navigate(to: appView)
     }
 
     var body: some View {
@@ -45,7 +42,7 @@ struct ContentView: View {
             }
             .toolbar {
                 ToolbarItemGroup(placement: .navigation) {
-                    if activeView == AppViews.settingsView {
+                    if viewManager.activeView == AppView.settingsView {
                         Button(action: { navigateTo(appView: .mainView) }) {
                             Label("Back", systemImage: "chevron.left")
                         }
@@ -53,7 +50,7 @@ struct ContentView: View {
                 }
 
                 ToolbarItemGroup(placement: .primaryAction) {
-                    if activeView != AppViews.settingsView {
+                    if viewManager.activeView != AppView.settingsView {
                         Group {
                             Menu {
                                 Button(action: {}) {

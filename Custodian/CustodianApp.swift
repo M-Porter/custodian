@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct CustodianApp: App {
+    @StateObject var viewManager = ViewManager()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -21,6 +23,7 @@ struct CustodianApp: App {
                     maxHeight: .infinity,
                     alignment: .center
                 )
+                .environmentObject(viewManager)
         }
 //        .windowStyle(DefaultWindowStyle())
 //        .windowToolbarStyle(DefaultWindowToolbarStyle())
