@@ -40,7 +40,7 @@ struct ContentView: View {
                         maxHeight: WINDOW_MIN_HEIGHT-20
                     )
             }
-            .toolbar {
+            .toolbar(content: {
                 ToolbarItemGroup(placement: .navigation) {
                     if viewManager.activeView == AppView.settingsView {
                         Button(action: { navigateTo(appView: .mainView) }) {
@@ -74,7 +74,7 @@ struct ContentView: View {
                         }
                     }
                 }
-            }
+            })
     }
 }
 
