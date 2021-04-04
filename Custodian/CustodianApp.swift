@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct CustodianApp: App {
     @StateObject var viewManager = ViewManager()
+    @StateObject var store = DataStore(groups: [])
 
     var body: some Scene {
         WindowGroup {
@@ -24,8 +25,7 @@ struct CustodianApp: App {
                     alignment: .center
                 )
                 .environmentObject(viewManager)
+                .environmentObject(store)
         }
-//        .windowStyle(DefaultWindowStyle())
-//        .windowToolbarStyle(DefaultWindowToolbarStyle())
     }
 }
