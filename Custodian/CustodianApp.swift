@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct CustodianApp: App {
-    @StateObject var viewManager = ViewManager()
-    @StateObject var store = DataStore(groups: [])
+    @StateObject public var viewManager = ViewManager()
+    @StateObject public var store = DataStore(groups: [])
 
     var body: some Scene {
         WindowGroup {
