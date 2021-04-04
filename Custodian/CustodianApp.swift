@@ -9,7 +9,8 @@ import SwiftUI
 
 @main
 struct CustodianApp: App {
-    @StateObject var viewManager = ViewManager()
+    @StateObject public var viewManager = ViewManager()
+    @StateObject public var store = DataStore()
 
     var body: some Scene {
         WindowGroup {
@@ -24,8 +25,11 @@ struct CustodianApp: App {
                     alignment: .center
                 )
                 .environmentObject(viewManager)
+                .environmentObject(store)
+                .onAppear {
+                    // setup the store and load in the data
+                    store.setup()
+                }
         }
-//        .windowStyle(DefaultWindowStyle())
-//        .windowToolbarStyle(DefaultWindowToolbarStyle())
     }
 }
