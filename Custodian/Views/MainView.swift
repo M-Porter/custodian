@@ -57,16 +57,29 @@ struct MainView: View {
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
-                Menu(content: {
-                    ForEach(dataStore.groups, id: \.self) { group in
-                        Button(group.name, action: {
-                            dataStore.setActiveGroup(group)
-                        })
-                    }
-                }, label: {
+                Button(action: { presentingGroupsList.toggle() }) {
                     Image(systemName: "folder")
                     Text(dataStore.activeGroup?.name ?? "Groups")
-                })
+                }
+                .popover(isPresented: $presentingGroupsList, attachmentAnchor: .point(.bottom), arrowEdge: .bottom) {
+                    // TODO: fix this terrible looking popover
+                    VStack {
+                        ForEach(dataStore.groups, id: \.self) { group in
+                            Button(action: {
+                                dataStore.setActiveGroup(group)
+                                presentingGroupsList = false
+                            }) {
+                                VStack {
+                                    Text(group.name)
+                                        .font(.title3)
+                                    Text("Below")
+                                }
+                            }
+                        }
+                    }
+                    .frame(width: 200)
+                    .padding()
+                }
 
                 Button(action: { presentingNewGroupView = true }) {
                     Label("New Group", systemImage: "folder.badge.plus")

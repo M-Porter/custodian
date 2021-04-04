@@ -46,6 +46,30 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "207EC1F72614589F00EDC063"
+               BuildableName = "CustodianTests.xctest"
+               BlueprintName = "CustodianTests"
+               ReferencedContainer = "container:Custodian.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "207EC2022614589F00EDC063"
+               BuildableName = "CustodianUITests.xctest"
+               BlueprintName = "CustodianUITests"
+               ReferencedContainer = "container:Custodian.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
